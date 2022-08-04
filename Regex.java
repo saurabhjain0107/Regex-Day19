@@ -32,11 +32,25 @@ public class Regex {
             System.out.println("last name is Invalid : ");
         }
     }
+    public void ValidEmailId(){
+        Pattern pattern = Pattern.compile("^[a-z]*.[a-z 0-9]+@[a-z 0-9]+.[a-z]{2,3}(.[a-z]{2,3})*$");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Email id :");
+        String email = sc.nextLine();
+        Matcher matcher = pattern.matcher(email);
+        if(matcher.matches()){
+            System.out.println("Valid Email Id");
+        }
+        else {
+            System.out.println("Invalid Email Id");
+        }
+    }
 
     public static void main(String[] args) {
         Regex obj = new Regex();
         obj.isFirstName();
         obj.IsLastName();
+        obj.ValidEmailId();
 
     }
 
