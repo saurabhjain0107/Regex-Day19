@@ -45,12 +45,26 @@ public class Regex {
             System.out.println("Invalid Email Id");
         }
     }
+    public  void isMobileNumber(){
+        Pattern pattern = Pattern.compile("^[9][1]\s[6-9][0-9]{9}$");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter Mobile number with country code :");
+        String phoneNumber = sc.nextLine();
+        Matcher matcher = pattern.matcher(phoneNumber);
+        if(matcher.matches()){
+            System.out.println("phone number is valid :");
+        }
+        else{
+            System.out.println("phone number is Invalid :");
+        }
+    }
 
     public static void main(String[] args) {
         Regex obj = new Regex();
         obj.isFirstName();
         obj.IsLastName();
         obj.ValidEmailId();
+        obj.isMobileNumber();
 
     }
 
