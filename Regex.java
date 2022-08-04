@@ -58,6 +58,19 @@ public class Regex {
             System.out.println("phone number is Invalid :");
         }
     }
+    public void isUserPassword(){
+        Pattern pattern = Pattern.compile("^[a-z]{8,}$");
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter User Password :");
+        String userPassword = sc.nextLine();
+        Matcher matcher = pattern.matcher(userPassword);
+        if(matcher.matches()){
+            System.out.println("User Password is valid :");
+        }
+        else{
+            System.out.println("User Password is Invalid :");
+        }
+    }
 
     public static void main(String[] args) {
         Regex obj = new Regex();
@@ -65,6 +78,7 @@ public class Regex {
         obj.IsLastName();
         obj.ValidEmailId();
         obj.isMobileNumber();
+        obj.isUserPassword();
 
     }
 
